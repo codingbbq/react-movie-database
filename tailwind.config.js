@@ -6,7 +6,11 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      screens: {
+        "others": { 'min': '340px', 'max': '1200px' },
+      }
+    },
   },
   plugins: [],
 }
