@@ -1,11 +1,9 @@
 import { useEffect, useState } from "react";
-
+import { API_BASE_URL, API_KEY } from "../constants/env";
 const useFetch = (apiPath, queryTerm="") => {
 
-	const URL = 'https://api.themoviedb.org/3';
-	const API_KEY = 'f5ac2a4ab0c583a1411b3def918ac2c4';
-
-	const fetch_url = `${URL}/${apiPath}?api_key=${API_KEY}&query=${queryTerm}`
+	const fetch_url = `${API_BASE_URL}/${apiPath}?api_key=${API_KEY}&query=${queryTerm}`
+	const [loader, setLoader] = useState(true);
     const [data, setData] = useState([]);
     
     useEffect(() => {
@@ -15,11 +13,12 @@ const useFetch = (apiPath, queryTerm="") => {
 			);
 			const json = await response.json();
 			setData(json.results);
+			setLoader(false);
 		};
         fetchMovies();
-	}, [apiPath]);
+	}, [apiPath, queryTerm]);
 
-    return { data }
+    return { data, loader }
 };
 
 export default useFetch;

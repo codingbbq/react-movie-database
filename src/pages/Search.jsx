@@ -1,15 +1,18 @@
 import { useSearchParams } from "react-router-dom";
 import { Card } from "../components";
 import useFetch from "../hooks/useFetch";
+import useTitle from "../hooks/useTitle";
+import Loader from "../components/Loader";
 
 const Search = ({ apiPath }) => {
 	const [searchParams] = useSearchParams();
 	const queryTerm = searchParams.get("q");
-
-	const { data: movies } = useFetch(apiPath, queryTerm);
+	const { data: movies, loader } = useFetch(apiPath, queryTerm);
+	useTitle(`Search results for ${queryTerm} | React Movie Database`);
 	return (
 		<>
-			<main>
+			{ loader ? ( <Loader />) : (
+				<main>
 				<section className="py-4">
 					<p className="text-3xl text-gray-700 dark:text-white">
 						{movies.length > 0
@@ -26,6 +29,7 @@ const Search = ({ apiPath }) => {
 					</div>
 				</section>
 			</main>
+			)}
 		</>
 	);
 };
