@@ -1,8 +1,17 @@
-# React + Vite
+# React Movie Database
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Check the project [React-Movie-Database](https://codingbbq.github.io/react-movie-database)
 
-Currently, two official plugins are available:
+[!screenshot](react-movie-db.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- ReactJS
+- React Hooks such as useEffect, useState
+- React Router
+- TailwindCSS
+- Flowbite for components using Tailwindcss
+- gh-pages to host the application
+- vite
+
+## Note
+- Had to update the BrowserRouter basename property to be able to correctly use the Routing on gh-pages
+- Had to update the URL for .js and .css after the application is deployed to correctly point to the resources after the app is deployed
