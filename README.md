@@ -2,7 +2,7 @@
 
 Check the project [React-Movie-Database](https://codingbbq.github.io/react-movie-database)
 
-[!screenshot](react-movie-db.png)
+![screenshot](react-movie-db.png)
 
 - ReactJS
 - React Hooks such as useEffect, useState
